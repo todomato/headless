@@ -47,16 +47,24 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.richtxt = new System.Windows.Forms.RichTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btn_ptt_gospi = new System.Windows.Forms.Button();
-            this.btn_ptt_hot = new System.Windows.Forms.Button();
             this.btn_ptt_nba = new System.Windows.Forms.Button();
+            this.btn_ptt_hot = new System.Windows.Forms.Button();
+            this.btn_ptt_gospi = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btn_saveDetail = new System.Windows.Forms.Button();
+            this.btx_6 = new System.Windows.Forms.Button();
+            this.txt_6 = new System.Windows.Forms.TextBox();
+            this.txt_6_express = new System.Windows.Forms.TextBox();
+            this.richtxt = new System.Windows.Forms.RichTextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -174,7 +182,8 @@
             this.txt_express4.Name = "txt_express4";
             this.txt_express4.Size = new System.Drawing.Size(445, 25);
             this.txt_express4.TabIndex = 23;
-            this.txt_express4.Text = "Array.from($(\'.title a\')).map(a => a.innerText + \'(\' + a.href + \')\');";
+            this.txt_express4.Text = "Array.from($(\'.title a\')).map(a => a.innerText + \'(\' + a.href + \')\').concat(Array" +
+    ".from($(\'.action-bar a\')).map(a => a.innerText + \'(\' + a.href + \')\'));";
             // 
             // txt_url4
             // 
@@ -275,9 +284,111 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(553, 212);
+            this.tabPage2.Size = new System.Drawing.Size(553, 217);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "pt";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage3.Controls.Add(this.btn_ptt_nba);
+            this.tabPage3.Controls.Add(this.btn_ptt_hot);
+            this.tabPage3.Controls.Add(this.btn_ptt_gospi);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(553, 217);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "克難版";
+            // 
+            // btn_ptt_nba
+            // 
+            this.btn_ptt_nba.Location = new System.Drawing.Point(230, 6);
+            this.btn_ptt_nba.Name = "btn_ptt_nba";
+            this.btn_ptt_nba.Size = new System.Drawing.Size(106, 56);
+            this.btn_ptt_nba.TabIndex = 25;
+            this.btn_ptt_nba.Text = "NBA";
+            this.btn_ptt_nba.UseVisualStyleBackColor = true;
+            this.btn_ptt_nba.Click += new System.EventHandler(this.btn_ptt_nba_Click);
+            // 
+            // btn_ptt_hot
+            // 
+            this.btn_ptt_hot.Location = new System.Drawing.Point(6, 6);
+            this.btn_ptt_hot.Name = "btn_ptt_hot";
+            this.btn_ptt_hot.Size = new System.Drawing.Size(106, 56);
+            this.btn_ptt_hot.TabIndex = 24;
+            this.btn_ptt_hot.Text = "熱門";
+            this.btn_ptt_hot.UseVisualStyleBackColor = true;
+            this.btn_ptt_hot.Click += new System.EventHandler(this.btn_ptt_hot_Click);
+            // 
+            // btn_ptt_gospi
+            // 
+            this.btn_ptt_gospi.Location = new System.Drawing.Point(118, 6);
+            this.btn_ptt_gospi.Name = "btn_ptt_gospi";
+            this.btn_ptt_gospi.Size = new System.Drawing.Size(106, 56);
+            this.btn_ptt_gospi.TabIndex = 23;
+            this.btn_ptt_gospi.Text = "八卦版";
+            this.btn_ptt_gospi.UseVisualStyleBackColor = true;
+            this.btn_ptt_gospi.Click += new System.EventHandler(this.btn_ptt_gospi_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage4.Controls.Add(this.button4);
+            this.tabPage4.Controls.Add(this.button3);
+            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Controls.Add(this.btn_saveDetail);
+            this.tabPage4.Controls.Add(this.btx_6);
+            this.tabPage4.Controls.Add(this.txt_6);
+            this.tabPage4.Controls.Add(this.txt_6_express);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(553, 217);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "豪華版";
+            // 
+            // btn_saveDetail
+            // 
+            this.btn_saveDetail.Location = new System.Drawing.Point(0, 68);
+            this.btn_saveDetail.Name = "btn_saveDetail";
+            this.btn_saveDetail.Size = new System.Drawing.Size(106, 56);
+            this.btn_saveDetail.TabIndex = 18;
+            this.btn_saveDetail.Text = "save_detail";
+            this.btn_saveDetail.UseVisualStyleBackColor = true;
+            this.btn_saveDetail.Click += new System.EventHandler(this.btn_saveDetail_Click);
+            // 
+            // btx_6
+            // 
+            this.btx_6.Location = new System.Drawing.Point(-4, 6);
+            this.btx_6.Name = "btx_6";
+            this.btx_6.Size = new System.Drawing.Size(106, 56);
+            this.btx_6.TabIndex = 15;
+            this.btx_6.Text = "save_data";
+            this.btx_6.UseVisualStyleBackColor = true;
+            this.btx_6.Click += new System.EventHandler(this.btn_saveDb);
+            // 
+            // txt_6
+            // 
+            this.txt_6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_6.Location = new System.Drawing.Point(108, 6);
+            this.txt_6.Name = "txt_6";
+            this.txt_6.Size = new System.Drawing.Size(449, 25);
+            this.txt_6.TabIndex = 16;
+            this.txt_6.Text = "https://forum.gamer.com.tw/B.php?bsn=23805&subbsn=0";
+            // 
+            // txt_6_express
+            // 
+            this.txt_6_express.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_6_express.Location = new System.Drawing.Point(108, 37);
+            this.txt_6_express.Name = "txt_6_express";
+            this.txt_6_express.Size = new System.Drawing.Size(449, 25);
+            this.txt_6_express.TabIndex = 17;
+            this.txt_6_express.Text = ".b-list__main__title";
             // 
             // richtxt
             // 
@@ -293,58 +404,35 @@
             this.richtxt.Text = "";
             this.richtxt.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richtxt_LinkClicked);
             // 
-            // tabPage3
+            // button2
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Gainsboro;
-            this.tabPage3.Controls.Add(this.btn_ptt_nba);
-            this.tabPage3.Controls.Add(this.btn_ptt_hot);
-            this.tabPage3.Controls.Add(this.btn_ptt_gospi);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(553, 89);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "克難版";
+            this.button2.Location = new System.Drawing.Point(3, 130);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(106, 56);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "save_data";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btn_ptt_gospi
+            // button3
             // 
-            this.btn_ptt_gospi.Location = new System.Drawing.Point(118, 6);
-            this.btn_ptt_gospi.Name = "btn_ptt_gospi";
-            this.btn_ptt_gospi.Size = new System.Drawing.Size(106, 56);
-            this.btn_ptt_gospi.TabIndex = 23;
-            this.btn_ptt_gospi.Text = "八卦版";
-            this.btn_ptt_gospi.UseVisualStyleBackColor = true;
-            this.btn_ptt_gospi.Click += new System.EventHandler(this.btn_ptt_gospi_Click);
+            this.button3.Location = new System.Drawing.Point(115, 130);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(106, 56);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "save_data";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btn_ptt_hot
+            // button4
             // 
-            this.btn_ptt_hot.Location = new System.Drawing.Point(6, 6);
-            this.btn_ptt_hot.Name = "btn_ptt_hot";
-            this.btn_ptt_hot.Size = new System.Drawing.Size(106, 56);
-            this.btn_ptt_hot.TabIndex = 24;
-            this.btn_ptt_hot.Text = "熱門";
-            this.btn_ptt_hot.UseVisualStyleBackColor = true;
-            this.btn_ptt_hot.Click += new System.EventHandler(this.btn_ptt_hot_Click);
-            // 
-            // btn_ptt_nba
-            // 
-            this.btn_ptt_nba.Location = new System.Drawing.Point(230, 6);
-            this.btn_ptt_nba.Name = "btn_ptt_nba";
-            this.btn_ptt_nba.Size = new System.Drawing.Size(106, 56);
-            this.btn_ptt_nba.TabIndex = 25;
-            this.btn_ptt_nba.Text = "NBA";
-            this.btn_ptt_nba.UseVisualStyleBackColor = true;
-            this.btn_ptt_nba.Click += new System.EventHandler(this.btn_ptt_nba_Click);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.Color.Gainsboro;
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(553, 222);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "豪華版";
+            this.button4.Location = new System.Drawing.Point(227, 130);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(106, 56);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "save_data";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
@@ -362,6 +450,8 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -393,6 +483,13 @@
         private System.Windows.Forms.Button btn_ptt_hot;
         private System.Windows.Forms.Button btn_ptt_gospi;
         private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button btx_6;
+        private System.Windows.Forms.TextBox txt_6;
+        private System.Windows.Forms.TextBox txt_6_express;
+        private System.Windows.Forms.Button btn_saveDetail;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 
